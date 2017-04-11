@@ -76,7 +76,7 @@ public class GUIScript : MonoBehaviour {
 		this.player1 = player1;
 		player1TargetLife = player1.lifePoints;
 		player1TotalLife = player1.lifePoints;
-		player1NameLocation = new Vector2(.02f, .93f);
+		player1NameLocation = new Vector2(.02f, .99f);
 		player1AlertLocation = new Vector2(.06f, .76f);
 		player1Anchor = TextAnchor.UpperLeft;
 		player1NameGO = CreateText(player1.characterName, UFE.config.guiOptions.characterNameFont, 1, player1NameLocation, player1Anchor);
@@ -84,21 +84,23 @@ public class GUIScript : MonoBehaviour {
 		this.player2 = player2;
 		player2TargetLife = player2.lifePoints;
 		player2TotalLife = player2.lifePoints;
-		player2NameLocation = new Vector2(.98f, .93f);
+		player2NameLocation = new Vector2(.98f, .99f);
 		player2AlertLocation = new Vector2(.94f, .76f);
 		player2Anchor = TextAnchor.UpperRight;
 		player2NameGO = CreateText(player2.characterName, UFE.config.guiOptions.characterNameFont, 1, player2NameLocation, player2Anchor);
 
 		mainAlertLocation = new Vector2(.5f, .6f);
 
-
+		/*
+		 * Erstellen von Info Menü. Evtl. später Timer dort plaztieren
+		 * 
 		infoGO = new GameObject("Info");
 		infoGO.AddComponent<GUIText>();
 		GUIText info = infoGO.GetComponent<GUIText>();
 		info.pixelOffset = new Vector2((Screen.width/2) - 60 * ((float)Screen.width/1280), (Screen.height) - 70 * ((float)Screen.height/720));
 		info.text = "ESC - Menu";
 		info.color = Color.black;
-
+		*/
 		isRunning = true;
 	}
 	
