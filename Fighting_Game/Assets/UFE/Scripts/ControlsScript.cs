@@ -114,8 +114,9 @@ public class ControlsScript : MonoBehaviour {
 		myMoveSetScript = character.GetComponent<MoveSetScript>();
 		myHitBoxesScript = character.GetComponent<HitBoxesScript>();
 		cameraScript = transform.parent.GetComponent<CameraScript>();
-		
+
 		mirror = 1;
+
 		testCharacterRotation(100);
 		if (gameObject.name == "Player2") UFE.FireGameBegins();
 
@@ -135,16 +136,29 @@ public class ControlsScript : MonoBehaviour {
 	}
 	
 	private void testCharacterRotation(float rotationSpeed){
-		if (mirror == -1 && opponent.transform.position.x > transform.position.x) {
-			mirror = 1;
-			standardYRotation = 360 - standardYRotation;
-			character.transform.localScale = new Vector3(-character.transform.localScale.x, character.transform.localScale.y, character.transform.localScale.z);
-		}else if (mirror == 1 && opponent.transform.position.x < transform.position.x) {
-			mirror = -1;
-			standardYRotation = 360 - standardYRotation;
-			character.transform.localScale = new Vector3(-character.transform.localScale.x, character.transform.localScale.y, character.transform.localScale.z);
+		if (gameObject.name == "Player1") {
+			if (mirror == -1 && Input.GetKeyDown (KeyCode.D)) {
+				mirror = 1;
+				standardYRotation = 360 - standardYRotation;
+				character.transform.localScale = new Vector3 (-character.transform.localScale.x, character.transform.localScale.y, character.transform.localScale.z);
+			} else if (mirror == 1 && Input.GetKeyDown (KeyCode.A)) {
+				mirror = -1;
+				standardYRotation = 360 - standardYRotation;
+				character.transform.localScale = new Vector3 (-character.transform.localScale.x, character.transform.localScale.y, character.transform.localScale.z);
+			}
+			character.transform.rotation = Quaternion.Slerp (character.transform.rotation, Quaternion.AngleAxis (standardYRotation, Vector3.up), Time.deltaTime * rotationSpeed);
+		} else if (gameObject.name == "Player2") {
+			if (mirror == -1 && Input.GetKeyDown (KeyCode.RightArrow)) {
+				mirror = 1;
+				standardYRotation = 360 - standardYRotation;
+				character.transform.localScale = new Vector3 (-character.transform.localScale.x, character.transform.localScale.y, character.transform.localScale.z);
+			} else if (mirror == 1 && Input.GetKeyDown (KeyCode.LeftArrow)) {
+				mirror = -1;
+				standardYRotation = 360 - standardYRotation;
+				character.transform.localScale = new Vector3 (-character.transform.localScale.x, character.transform.localScale.y, character.transform.localScale.z);
+			}
+			character.transform.rotation = Quaternion.Slerp (character.transform.rotation, Quaternion.AngleAxis (standardYRotation, Vector3.up), Time.deltaTime * rotationSpeed);
 		}
-		character.transform.rotation = Quaternion.Slerp(character.transform.rotation, Quaternion.AngleAxis(standardYRotation, Vector3.up), Time.deltaTime * rotationSpeed);
 	}
 	
 	private void fixCharacterRotation(){
@@ -265,6 +279,7 @@ public class ControlsScript : MonoBehaviour {
 						inputRef.heldDown += Time.deltaTime;
 						if (currentState == PossibleStates.Stand) 
 							if (currentMove == null) myPhysicsScript.move(mirror, Input.GetAxisRaw(inputRef.inputButtonName));
+
 					}
 					
 					if (Input.GetAxisRaw(inputRef.inputButtonName) < 0) {

@@ -1,9 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\UFE\Scripts\GUIScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\UFE\Scripts\ControlsScript.cs">
     <Files>
-      <File FileName="Assets\UFE\Scripts\GUIScript.cs" Line="94" Column="5" />
-      <File FileName="Assets\UFE\Scripts\UFE.cs" Line="33" Column="19" />
+      <File FileName="Assets\UFE\Scripts\GUIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\UFE\Scripts\UFE.cs" Line="1" Column="1" />
+      <File FileName="Assets\UFE\Scripts\ControlsScript.cs" Line="118" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
