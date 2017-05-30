@@ -76,7 +76,7 @@ public class GUIScript : MonoBehaviour {
 		this.player1 = player1;
 		player1TargetLife = player1.lifePoints;
 		player1TotalLife = player1.lifePoints;
-		player1NameLocation = new Vector2(.02f, .99f);
+		player1NameLocation = new Vector2(.02f, .09f);
 		player1AlertLocation = new Vector2(.06f, .76f);
 		player1Anchor = TextAnchor.UpperLeft;
 		player1NameGO = CreateText(player1.characterName, UFE.config.guiOptions.characterNameFont, 1, player1NameLocation, player1Anchor);
@@ -84,7 +84,7 @@ public class GUIScript : MonoBehaviour {
 		this.player2 = player2;
 		player2TargetLife = player2.lifePoints;
 		player2TotalLife = player2.lifePoints;
-		player2NameLocation = new Vector2(.98f, .99f);
+		player2NameLocation = new Vector2(.98f, .09f);
 		player2AlertLocation = new Vector2(.94f, .76f);
 		player2Anchor = TextAnchor.UpperRight;
 		player2NameGO = CreateText(player2.characterName, UFE.config.guiOptions.characterNameFont, 1, player2NameLocation, player2Anchor);
